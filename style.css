@@ -1,0 +1,310 @@
+:root {
+    --bg-color: #1e1e1e;
+    --sidebar-bg: #252526;
+    --editor-bg: #1e1e1e;
+    --text-color: #cccccc;
+    --accent-color: #007acc;
+    --header-bg: #3c3c3c;
+    --control-hover: #505050;
+    --menu-bg: #333333;
+    --explorer-bg: #252526;
+    --file-hover: #37373d;
+    --file-active: #37373d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.vscode {
+    width: 100%;
+    max-width: 900px;
+    background: var(--editor-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.vscode-header {
+    background: var(--sidebar-bg);
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close { background: #ff5f57; }
+.minimize { background: #febc2e; }
+.maximize { background: #28c840; }
+
+.title {
+    margin-left: 20px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.vscode-window {
+    display: flex;
+    min-height: 500px;
+}
+
+.sidebar {
+    width: 50px;
+    background: var(--sidebar-bg);
+    padding: 1rem 0;
+}
+
+.file-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    color: #858585;
+}
+
+.file-icons i {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.file-icons i:hover,
+.file-icons .active {
+    color: var(--text-color);
+}
+
+.file-explorer {
+    width: 200px;
+    background: var(--explorer-bg);
+    border-right: 1px solid #1f1f1f;
+}
+
+.explorer-header {
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #bbbbbb;
+}
+
+.file-list {
+    padding: 0 8px;
+}
+
+.file {
+    padding: 3px 8px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.file:hover {
+    background: var(--file-hover);
+}
+
+.file.active {
+    background: var(--file-active);
+}
+
+.editor {
+    flex: 1;
+    padding: 2rem;
+}
+
+.content {
+    white-space: pre-line;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.content.hidden {
+    display: none;
+}
+
+h1 {
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+h2 {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    font-weight: 500;
+}
+
+.role {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.skills {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.skill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.footer {
+    background: var(--sidebar-bg);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.status {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.status i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .vscode {
+        border-radius: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vscode-window {
+        flex: 1;
+    }
+
+    .sidebar {
+        width: 40px;
+    }
+
+    .file-explorer {
+        width: 150px;
+    }
+
+    .editor {
+        padding: 1rem;
+    }
+
+    .content {
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        flex-direction: row;
+        padding: 0.5rem 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-links {
+        gap: 1.2rem;
+    }
+
+    .social-link {
+        font-size: 1.1rem;
+    }
+
+    .status {
+        font-size: 0.8rem;
+    }
+
+    /* Yatay modda düzeltmeler */
+    @media (orientation: landscape) {
+        .vscode {
+            height: auto;
+            min-height: 100vh;
+        }
+
+        .vscode-window {
+            min-height: 400px;
+        }
+    }
+}
+
+/* Çok küçük ekranlar için */
+@media (max-width: 480px) {
+    .file-explorer {
+        width: 120px;
+    }
+
+    .editor {
+        padding: 0.8rem;
+    }
+
+    .content {
+        font-size: 0.9rem;
+    }
+} 

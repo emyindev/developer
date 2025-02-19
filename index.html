@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emin | Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="vscode">
+        <div class="vscode-header">
+            <div class="controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="title">about.txt - VS Code</div>
+        </div>
+        <div class="vscode-window">
+            <div class="sidebar">
+                <div class="file-icons">
+                    <i class="far fa-file-alt active"></i>
+                    <i class="far fa-folder"></i>
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-code-branch"></i>
+                </div>
+            </div>
+            <div class="file-explorer">
+                <div class="explorer-header">
+                    EXPLORER
+                </div>
+                <div class="file-list">
+                    <div class="file active" data-file="about">about.txt</div>
+                    <div class="file" data-file="skills">skills.txt</div>
+                    <div class="file" data-file="projects">projects.txt</div>
+                    <div class="file" data-file="contact">contact.txt</div>
+                </div>
+            </div>
+            <div class="editor">
+                <div class="content" id="about">
+                    ====================================
+                    # HAKKIMDA
+                    ====================================
+                    
+                    İsim: Emin
+                    Rol: Software Developer
+                    
+                    Web teknolojileri konusunda uzmanlaşmış, 
+                    kullanıcı deneyimini önemseyen 
+                    Full Stack Developer.
+                </div>
+                <div class="content hidden" id="skills">
+                    ====================================
+                    # YETENEKLER
+                    ====================================
+                    
+                    Frontend:
+                    * React.js
+                    * JavaScript
+                    * HTML/CSS
+                    * TypeScript
+                    
+                    Backend:
+                    * Node.js
+                    * Express
+                    * MongoDB
+                    * SQL
+                </div>
+                <div class="content hidden" id="projects">
+                    ====================================
+                    # PROJELER
+                    ====================================
+                    
+                    1. E-Ticaret Platformu
+                       - React & Node.js
+                       - Tam Responsive Tasarım
+                    
+                    2. Blog Sistemi
+                       - MERN Stack
+                       - SEO Optimizasyonu
+                    
+                    3. Portfolio Website
+                       - Modern UI/UX
+                       - VS Code Teması
+                </div>
+                <div class="content hidden" id="contact">
+                    ====================================
+                    # İLETİŞİM
+                    ====================================
+                    
+                    Email: contact@example.com
+                    GitHub: github.com/username
+                    LinkedIn: linkedin.com/in/username
+                    Twitter: @username
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="social-links">
+                <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" title="Mail"><i class="far fa-envelope"></i></a>
+            </div>
+            <div class="status">
+                <span><i class="fas fa-code-branch"></i> main</span>
+                <span><i class="fas fa-check-circle"></i> Ready</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.file').forEach(file => {
+            file.addEventListener('click', () => {
+                // Remove active class from all files
+                document.querySelectorAll('.file').forEach(f => f.classList.remove('active'));
+                // Add active class to clicked file
+                file.classList.add('active');
+                
+                // Hide all content
+                document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
+                // Show selected content
+                document.getElementById(file.dataset.file).classList.remove('hidden');
+                
+                // Update title
+                document.querySelector('.title').textContent = `${file.textContent} - VS Code`;
+            });
+        });
+    </script>
+</body>
+</html> 

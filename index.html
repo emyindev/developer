@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,68 +40,50 @@
             <div class="editor">
                 <div class="content" id="about">
                     ====================================
-                    # HAKKIMDA
+                    # ABOUT ME
                     ====================================
                     
-                    İsim: Emin
-                    Rol: Software Developer
+                    Name: Emin
+                    Role: Developer
                     
-                    Web teknolojileri konusunda uzmanlaşmış, 
-                    kullanıcı deneyimini önemseyen 
-                    Full Stack Developer.
+                    Web and Minecraft Bedrock Developer, 
+                    focused on user experience and functionality.
                 </div>
                 <div class="content hidden" id="skills">
                     ====================================
-                    # YETENEKLER
+                    # SKILLS
                     ====================================
                     
-                    Frontend:
-                    * React.js
+                    Languages:
+                    * HTML
+                    * CSS
                     * JavaScript
-                    * HTML/CSS
-                    * TypeScript
-                    
-                    Backend:
-                    * Node.js
-                    * Express
-                    * MongoDB
-                    * SQL
+                    * PHP
+                    * C#
+                    * Basic SQL
                 </div>
                 <div class="content hidden" id="projects">
                     ====================================
-                    # PROJELER
+                    # PROJECTS
                     ====================================
                     
-                    1. E-Ticaret Platformu
-                       - React & Node.js
-                       - Tam Responsive Tasarım
-                    
-                    2. Blog Sistemi
-                       - MERN Stack
-                       - SEO Optimizasyonu
-                    
-                    3. Portfolio Website
-                       - Modern UI/UX
-                       - VS Code Teması
+                    * Food Ordering Application
                 </div>
                 <div class="content hidden" id="contact">
                     ====================================
-                    # İLETİŞİM
+                    # CONTACT
                     ====================================
                     
-                    Email: contact@example.com
-                    GitHub: github.com/username
-                    LinkedIn: linkedin.com/in/username
-                    Twitter: @username
+                    Email: emyindev@gmail.com
+                    GitHub: github.com/emyindev
+                    Discord: emyin
                 </div>
             </div>
         </div>
         <div class="footer">
             <div class="social-links">
-                <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link" title="Mail"><i class="far fa-envelope"></i></a>
+                <a href="https://github.com/emyindev" class="social-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:emyindev@gmail.com" class="social-link" title="Mail"><i class="far fa-envelope"></i></a>
             </div>
             <div class="status">
                 <span><i class="fas fa-code-branch"></i> main</span>
@@ -113,20 +95,14 @@
     <script>
         document.querySelectorAll('.file').forEach(file => {
             file.addEventListener('click', () => {
-                // Remove active class from all files
                 document.querySelectorAll('.file').forEach(f => f.classList.remove('active'));
-                // Add active class to clicked file
                 file.classList.add('active');
-                
-                // Hide all content
-                document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
-                // Show selected content
+                            document.querySelectorAll('.content').forEach(content => content.classList.add('hidden'));
                 document.getElementById(file.dataset.file).classList.remove('hidden');
                 
-                // Update title
                 document.querySelector('.title').textContent = `${file.textContent} - VS Code`;
             });
         });
     </script>
 </body>
-</html> 
+</html>
